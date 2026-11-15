@@ -1,0 +1,9 @@
+PASTA DE IMAGENS — MARIA DOS ANJOS
+
+Coloque aqui as fotos do site, com estes nomes (formato .jpg):
+
+  destaque.jpg                        foto grande da página inicial (vertical, proporção 4:5)
+  produto-01.jpg ... produto-08.jpg   fotos dos produtos do catálogo (vertical, proporção 4:5)
+
+Enquanto a foto não existir, o site mostra o espaço "Adicionar foto".
+Dica: use fotos com cerca de 1200 x 1500 pixels e menos de 400 KB cada.

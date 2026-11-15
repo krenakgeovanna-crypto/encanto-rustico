@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ENCANTO RÚSTICO — ARTES ARTESANAIS</title>
+  <meta name="description" content="Arte feita à mão, com carinho em cada detalhe. Conheça o catálogo de ENCANTO RÚSTICO — Artes Artesanais.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="topo">
+    <a class="marca" href="#inicio" aria-label="ENCANTO RÚSTICO — Artes Artesanais, início">
+      <span class="marca-nome">ENCANTO RÚSTICO</span>
+      <span class="marca-sub">ARTES ARTESANAIS</span>
+    </a>
+    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+    </button>
+    <nav class="menu" id="menu">
+      <a href="#inicio">Início</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PÁGINA INICIAL -->
+    <section class="hero" id="inicio">
+      <div class="hero-texto">
+        <p class="hero-apresenta">ENCANTO RÚSTICO &mdash; Artes Artesanais</p>
+        <h1>Arte feita à mão, com carinho em cada detalhe.</h1>
+        <p class="hero-intro">
+          <!-- EDITE AQUI: texto de apresentação da marca -->
+          Peças artesanais criadas com cuidado, uma a uma. Conheça o catálogo e encontre a que combina com você.
+        </p>
+        <a class="botao" href="#catalogo">Conhecer o catálogo</a>
+      </div>
+
+      <!-- Imagem de destaque: coloque a foto em images/destaque.jpg -->
+      <div class="hero-arco foto-espaco">
+        <span class="foto-aviso">Adicionar foto</span>
+        <img src="images/destaque.jpg" alt="Peças artesanais de ENCANTO RÚSTICO" onerror="this.remove()">
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="secao" id="catalogo">
+      <div class="secao-titulo">
+        <h2>Catálogo</h2>
+        <p>Os produtos abaixo são exemplos. Substitua-os pelas peças reais da marca.</p>
+      </div>
+      <!-- Os cards são criados pelo arquivo js/config.js -->
+      <div class="grade" id="grade-produtos"></div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="secao contato" id="contato">
+      <div class="contato-caixa">
+        <h2>Vamos conversar?</h2>
+        <p>Fale diretamente com a Maria para consultar preços, prazos e encomendas.</p>
+        <div class="contato-botoes">
+          <a class="botao" data-whatsapp target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
+          <a class="botao botao-contorno" data-instagram target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p class="rodape-nome">ENCANTO RÚSTICO</p>
+    <p class="rodape-sub">ARTES ARTESANAIS</p>
+    <p class="rodape-frase">Feito à mão, feito com carinho.</p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

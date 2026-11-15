@@ -1,0 +1,151 @@
+/* =====================================================
+   MARIA DOS ANJOS — ARTES ARTESANAIS
+   Cores e fontes ficam no começo: altere aqui para mudar o site todo.
+   ===================================================== */
+:root {
+  --creme: #F7F0E3;
+  --bege: #E6D5BC;
+  --bege-claro: #EFE3D0;
+  --terracota: #A65B40;
+  --terracota-escuro: #8A4630;
+  --marrom: #43302A;
+  --branco: #FFFFFF;
+
+  --fonte-titulo: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --fonte-texto: "Mulish", "Helvetica Neue", Arial, sans-serif;
+  --largura: 1160px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  margin: 0; background: var(--creme); color: var(--marrom);
+  font-family: var(--fonte-texto); font-weight: 300; font-size: 1.0625rem; line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 500; line-height: 1.12; margin: 0; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--terracota); outline-offset: 3px; }
+
+/* ---------- Cabeçalho ---------- */
+.topo {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px max(24px, calc((100% - var(--largura)) / 2));
+  background: rgba(247, 240, 227, .92); backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(166, 91, 64, .15);
+}
+.marca { text-decoration: none; display: flex; flex-direction: column; line-height: 1.15; }
+.marca-nome { font-family: var(--fonte-titulo); font-size: 1.45rem; font-weight: 600; letter-spacing: .14em; }
+.marca-sub { font-size: .66rem; letter-spacing: .34em; color: var(--terracota); }
+.menu { display: flex; gap: 40px; }
+.menu a { text-decoration: none; font-size: .95rem; padding: 4px 0; background: linear-gradient(var(--terracota), var(--terracota)) 0 100% / 0 1px no-repeat; transition: background-size .35s ease; }
+.menu a:hover { background-size: 100% 1px; }
+.menu-btn { display: none; background: none; border: 0; width: 44px; height: 44px; cursor: pointer; position: relative; }
+.menu-btn span { position: absolute; left: 10px; right: 10px; height: 1.5px; background: var(--marrom); transition: transform .3s; }
+.menu-btn span:first-child { top: 17px; } .menu-btn span:last-child { top: 26px; }
+.menu-btn[aria-expanded="true"] span:first-child { transform: translateY(4.5px) rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:last-child { transform: translateY(-4.5px) rotate(-45deg); }
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-block; text-decoration: none; cursor: pointer;
+  background: var(--terracota); color: var(--branco);
+  padding: 15px 36px; border: 1px solid var(--terracota); border-radius: 999px;
+  font-size: .95rem; font-weight: 600; letter-spacing: .04em;
+  transition: background .3s, color .3s, transform .3s;
+}
+.botao:hover { background: var(--terracota-escuro); border-color: var(--terracota-escuro); transform: translateY(-2px); }
+.botao-contorno { background: transparent; color: var(--terracota); }
+.botao-contorno:hover { background: var(--terracota); color: var(--branco); border-color: var(--terracota); }
+.botao-inativo { opacity: .55; pointer-events: none; }
+
+/* ---------- Espaço de foto (placeholder) ---------- */
+.foto-espaco { position: relative; overflow: hidden; background: var(--bege); }
+.foto-espaco img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.foto-aviso {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: var(--fonte-titulo); font-style: italic; font-size: 1.2rem; color: var(--terracota);
+  background: repeating-linear-gradient(135deg, var(--bege) 0 14px, var(--bege-claro) 14px 28px);
+}
+
+/* ---------- Página inicial ---------- */
+.hero {
+  max-width: var(--largura); margin: 0 auto;
+  display: grid; grid-template-columns: 1.1fr .9fr; gap: 80px; align-items: center;
+  padding: 100px 24px 130px; min-height: calc(100vh - 70px);
+}
+.hero-apresenta { font-size: .95rem; color: var(--terracota); letter-spacing: .08em; margin-bottom: 28px; }
+.hero h1 { font-size: clamp(2.8rem, 6vw, 4.9rem); margin-bottom: 32px; }
+.hero-intro { max-width: 30em; margin-bottom: 44px; }
+.hero-arco { aspect-ratio: 4 / 5; border-radius: 999px 999px 6px 6px; box-shadow: 0 0 0 10px var(--creme), 0 0 0 11px var(--terracota); }
+.hero-texto > *, .hero-arco { animation: surgir 1s ease both; }
+.hero-texto > :nth-child(2) { animation-delay: .12s; } .hero-texto > :nth-child(3) { animation-delay: .24s; } .hero-texto > :nth-child(4) { animation-delay: .36s; }
+.hero-arco { animation-delay: .2s; }
+@keyframes surgir { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Seções ---------- */
+.secao { max-width: var(--largura); margin: 0 auto; padding: 100px 24px; }
+.secao-titulo { text-align: center; margin-bottom: 80px; }
+.secao-titulo h2 { font-size: clamp(2.3rem, 4vw, 3.2rem); margin-bottom: 16px; }
+.secao-titulo p { color: rgba(67, 48, 42, .8); }
+
+/* ---------- Catálogo ---------- */
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 64px 40px; }
+.card { text-align: center; }
+.card-foto { aspect-ratio: 4 / 5; border-radius: 999px 999px 6px 6px; margin-bottom: 28px; transition: transform .6s ease, box-shadow .6s ease; }
+.card-foto img { transition: transform .8s ease; }
+.card:hover .card-foto { transform: translateY(-6px); box-shadow: 0 22px 40px -22px rgba(67, 48, 42, .45); }
+.card:hover .card-foto img { transform: scale(1.05); }
+.etiqueta {
+  position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+  background: var(--branco); color: var(--marrom); font-size: .74rem; letter-spacing: .06em;
+  padding: 3px 14px; border-radius: 999px;
+}
+.card h3 { font-size: 1.6rem; margin-bottom: 10px; }
+.card-corpo p { font-size: .95rem; margin: 0 auto 24px; max-width: 24em; }
+.botao-card { padding: 11px 28px; font-size: .88rem; }
+
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .9s ease, transform .9s ease; transition-delay: calc(var(--i, 0) * 90ms); }
+.reveal.visivel { opacity: 1; transform: none; }
+
+/* ---------- Contato ---------- */
+.contato { padding-top: 40px; }
+.contato-caixa { background: var(--bege-claro); border: 1px solid var(--bege); border-radius: 6px; text-align: center; padding: 96px 24px; }
+.contato-caixa h2 { font-size: clamp(2.2rem, 4vw, 3rem); margin-bottom: 16px; }
+.contato-caixa p { margin-bottom: 40px; }
+.contato-botoes { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+
+/* ---------- Rodapé ---------- */
+.rodape { background: var(--marrom); color: var(--creme); text-align: center; padding: 80px 24px; }
+.rodape-nome { font-family: var(--fonte-titulo); font-size: 1.7rem; font-weight: 600; letter-spacing: .16em; }
+.rodape-sub { font-size: .72rem; letter-spacing: .36em; color: var(--bege); margin: 4px 0 28px; }
+.rodape-frase { font-family: var(--fonte-titulo); font-style: italic; font-size: 1.2rem; color: var(--bege); }
+
+/* ---------- Celular e tablet ---------- */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 56px; padding: 56px 24px 90px; min-height: 0; }
+  .hero-arco { max-width: 420px; width: 100%; margin: 0 auto; }
+  .menu-btn { display: block; }
+  .menu {
+    position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0;
+    background: var(--creme); border-bottom: 1px solid var(--bege);
+    max-height: 0; overflow: hidden; transition: max-height .4s ease;
+  }
+  .menu.aberto { max-height: 260px; }
+  .menu a { padding: 18px 24px; background: none; }
+  .secao { padding: 72px 24px; }
+  .secao-titulo { margin-bottom: 56px; }
+  .grade { grid-template-columns: repeat(2, 1fr); gap: 48px 20px; }
+}
+@media (max-width: 520px) {
+  .grade { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
+  .marca-nome { font-size: 1.2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}
